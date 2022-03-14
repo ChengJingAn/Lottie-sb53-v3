@@ -4,7 +4,7 @@ import "../../stylesheets/styles.css";
 import Lottie from "react-lottie-segments";
 import loadAnimation from '../../utils/loadAnimation'
 import { UserContext } from '../../components/BaseShot';
-import { prePathUrl, initialAudio } from '../../components/CommonFunctions';
+import { prePathUrl, initialAudio , startRepeatAudio} from '../../components/CommonFunctions';
 import GamePanel from "./GamePanel"
 import Review from "./Review"
 import loadSound from '../../utils/loadSound';
@@ -97,6 +97,7 @@ const BaseScene = React.forwardRef(({ nextFunc, _geo, _baseGeo, showMusicBtn }, 
                     audioList.bodyAudio.play();
                     timerList[1] = setTimeout(() => {
                         audioList.subBodyAudio.play();
+                        startRepeatAudio();
                     }, audioList.bodyAudio.duration * 1000 + 1000);
                 }, 1000);
                 setIntroHide(true)

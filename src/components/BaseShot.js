@@ -31,6 +31,7 @@ let buzzAudio = new loadSound('buzz', true);
 let yeahAudio = new loadSound('yeah', true);
 let tingAudio = new loadSound('ting', true);
 let wooAudio = new loadSound('woo', true);
+let repeatAudio = new loadSound('repeatTap', true)
 
 clickAudio.volume = 0.0;
 buzzAudio.volume = 0.4;
@@ -39,12 +40,14 @@ yeahAudio.volume = 0.7;
 wooAudio.volume = 0.7;
 
 let audioListForMute = [
-    titleAudio, bodyAudio, subBodyAudio, clickAudio, clapAudio, backAudio, buzzAudio, yeahAudio, tingAudio, wooAudio
+    titleAudio, bodyAudio, subBodyAudio, clickAudio, clapAudio, backAudio, buzzAudio, yeahAudio, tingAudio, wooAudio,
+    repeatAudio
 ]
 var isOff = false;
 
 let audioList = {
-    titleAudio, bodyAudio, subBodyAudio, clickAudio, clapAudio, backAudio, buzzAudio, yeahAudio, tingAudio, wooAudio
+    titleAudio, bodyAudio, subBodyAudio, clickAudio, clapAudio, backAudio, buzzAudio, yeahAudio, tingAudio, wooAudio,
+    repeatAudio
 }
 
 var currentBackgroundState = 1  // 1 - center center, 2 - center bottom 3-left center 4 - left bottom, 5 - left top

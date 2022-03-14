@@ -45,3 +45,34 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
 }
 
 export const prePathUrl = () => sharePrePath;
+
+
+
+let repeatAudio, repeatInterval, repeartTimer;
+
+
+export function setRepeatAudio(audio) {
+    repeatAudio = audio;
+}
+
+export function startRepeatAudio(pastTime = 3000, intervalTime = 7000) {
+
+    clearTimeout(repeartTimer)
+    clearInterval(repeatInterval)
+
+    repeartTimer = setTimeout(() => {
+        repeatInterval = setInterval(() => {
+            repeatAudio.play();
+        }, intervalTime);
+    }, pastTime);
+}
+
+export function stopRepeatAudio() {
+
+    repeatAudio.pause();
+    repeatAudio.currentTime = 0;
+
+    clearTimeout(repeartTimer)
+    clearInterval(repeatInterval)
+
+}
